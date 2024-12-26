@@ -11,12 +11,13 @@ public class MyArrays {
 
     /**
      * Обобщенный метод для выполнения бинарного поиска в массивах примитивных типов.
-     * @param array массив для поиска
-     * @param fromIndex начальный индекс (включительно)
-     * @param toIndex конечный индекс (исключительно)
-     * @param key ключ для поиска
+     *
+     * @param array      массив для поиска
+     * @param fromIndex  начальный индекс (включительно)
+     * @param toIndex    конечный индекс (исключительно)
+     * @param key        ключ для поиска
      * @param comparator интерфейс для сравнения элементов
-     * @param <T> тип элементов массива
+     * @param <T>        тип элементов массива
      * @return индекс найденного ключа или отрицательное значение, если ключ не найден
      */
     @SuppressWarnings("unchecked")
@@ -47,6 +48,7 @@ public class MyArrays {
     private interface ComparePrimitive<T> {
         int compare(Object o1, Object o2);
     }
+
     // 1. Byte array
     public static int binarySearch(byte[] a, byte key) {
         return binarySearch(a, 0, a.length, key);
@@ -87,6 +89,7 @@ public class MyArrays {
     public static int binarySearch(float[] a, int fromIndex, int toIndex, float key) {
         return binarySearchGeneric(a, fromIndex, toIndex, key, (o1, o2) -> Float.compare((float) o1, (float) o2));
     }
+
     // 9. Int array
     public static int binarySearch(int[] a, int key) {
         return binarySearch(a, 0, a.length, key);
